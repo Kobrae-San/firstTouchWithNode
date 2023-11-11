@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Yanone+Kaffeesatz:wght@700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    background-color: #f2f2f2;
+    color: #3B3B3B;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited, .title, .snippet {
+    color: #3B3B3B;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 40px 0 40px;
+}
+
+.navbar .list a {
+    transition-property: font-size;
+}
+
+.navbar .list a:hover {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.block-title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -16px;
+}
+
+.list {
+    display: flex;
+    gap: 25px;
+}
+
+ul {
+    list-style: none;
+}
+
+.website-title, .subtitle {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.website-title {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.website-description{
+    font-size: 16px;
+}
+
+.content {
+    height: 100%;
+    margin: 40px 90px 0 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.subtitle {
+    font-size: 32px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;    
+}
+
+.input-block {
+    display: inherit;
+    flex-direction: inherit;
+    gap: 8px;
+}
+
+.input-block > input {
+    padding-left: 4px;
+    display: inherit;
+    width: 40em;
+    height: 24px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.input-block > textarea {
+    padding: 16px;
+    resize: none;
+    font-family:  'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    width: 31.5em;
+    display: inherit;
+    border-radius: 4px;
+    height: 250px;
+}
+
+.details {
+    display: flex;
+}
+
+.delete-btn {
+    cursor: pointer;
+    width: 160px;
+    height: 52px;
+    font-size: 16px;
+    border-width: 2px;
+    border-radius: 8px;
+    align-self: flex-end;
+    margin-top: 64px;
+    color: #9d0208;
+    border-color: #9d0208;
+    background-color: #f2f2f2;
+}
+
+.delete-btn:hover {
+    background-color: #9d0208;
+    color: #f2f2f2;
+    border-color: #f2f2f2;
+}
+
+.submit-btn {
+    margin-top: 24px;
+    font-family:  'Open Sans', sans-serif;
+    font-size: 24px;
+    background-color: #f2f2f2;
+    color: #097109;
+    height: 48px;
+    width: 200px;
+    border-color: #097109;
+    border-radius: 8px;
+    border-width: 4px;
+}
+
+.submit-btn:hover {
+    cursor: pointer;
+}
+
+.footer {
+    display: inherit;
+    padding-right: 15px;
+    align-self: flex-end;
+}

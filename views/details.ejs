@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/nav.ejs") %>
+    
+    <div class="details content">
+        <div class="details-content">
+            <h2><%= blog.title %></h2>
+            <div class="content">
+                <p><%= blog.body %></p>
+            </div>
+        </div>
+        
+        <!-- Içi je crée un bouton qui va me permettre de supprimer le document sur lequel je me trouve, pour pouvoir faire ça je lui fourni un attribut special "data"
+            on lui ajoute un attribut personnaliser afin de stocker une donnée qui sera içi l'id de mon instance de Blog
+        -->
+        <button class="delete-btn" id="delete-btn" data-doc="<%= blog._id %>">Supprimer</button>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
+
+    <script>
+        const deleteBtn = document.getElementById('delete-btn');
+
+        deleteBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Nous allons utiliser l'api fetch afin d'envoyer une requête DELETE pour supprimer le document lié à mon bouton mais avant cela on doit indiquer ou l'on va
+            // envoyer cette requête. 
+            const endpoint = `/blogs/${deleteBtn.dataset.doc}`;
+
+            fetch(endpoint, {
+                method: 'DELETE'
+            })
+            .then((response) => response.json()) // Je récupere la réponse envoyé par le serveur qui est un json et je le transforme en un Objet.
+            .then((data) => window.location.href = data.redirect) // Je redirige ensuite la fenetre avec la propriété redirect de mon objet qui contient le chemin de la redirection.
+            .catch(err => console.log(err));
+        });
+    </script>
+</body>
+</html>
